@@ -8,23 +8,19 @@ This framework mainly consists of two parts: a Linux user program and a Linux ke
 and uses IP-in-IP to encapsulate an outer IP header with the destination IP field set to the desired path ID.
 
 ##Getting Started
-Install Linux kernel header files. As this framework is designed for Linux kernel v3.18.11, we strongly recommend installing linux-headers-3.18.11-dctcp-measurement.
-```
-sudo apt-get install linux-headers-3.18.11-dctcp-measurement
-```
-Get source repository
+Get source repository.
 ```
 git clone https://github.com/HKUST-SING/XPath-Software.git
 ```
-Build
+You need the kernel headers to compile it:
 ```
 make
 ```
-Load the kernel module
+To install the kernel module:
 ```
 sudo insmod xpath.ko
 ```
-Configure load balancing scheme, ECMP for example
+Configure load balancing scheme, For example, to enable ECMP:
 ```
 sudo sysctl xpath.load_balancing=0
 ```
